@@ -2,29 +2,29 @@ module.exports =
 function check(str, bracketsConfig) {
   let opened = [];
   let closed = [];
-  
   //1.
   for (let n = 0; n < bracketsConfig.length; n++) {
     opened.push(bracketsConfig[n][0]);
-    closed.push(bracketsConfig[n][1]);
-  };
+    closed.push(bracketsConfig[n][1]);};
   let resultArray = [];
   //2.
   for (let i = 0; i < str.length; i++) {
     //3.
    if (opened.includes(str[i]) && !closed.includes(str[i]) ) {
     resultArray.push(str[i]); 
-      continue;
+    continue;
     } else {
       //4.
       if (opened.includes(str[i]) && closed.includes(str[i])) {
         //5.
-        if (resultArray.length === 0 || resultArray[resultArray.length - 1] !== str[i]) {
+        if (resultArray.length === 0 || !resultArray.includes(str[i])) {
           resultArray.push(str[i]);
+          continue;
           }
           //6.
         else {
           resultArray.pop();
+          continue;
           }
       } 
     };
