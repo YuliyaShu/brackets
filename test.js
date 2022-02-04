@@ -1,6 +1,7 @@
 const assert = require('assert');
 const check = require('./src/index.js');
 
+
 const config1 = [['(', ')']];
 const config2 = [['(', ')'], ['[', ']']];
 const config3 = [['(', ')'], ['[', ']'], ['{', '}']];
@@ -88,3 +89,4 @@ it('should check if brackets sequence is correct 19', () => {
 it('should check if brackets sequence is correct 20', () => {
   assert.equal(check('([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]])((([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]])))', config7), true);
 });
+
